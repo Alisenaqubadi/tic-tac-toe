@@ -1,6 +1,12 @@
+:root {
+    --radius-size: 20px;
+
+}
+
 * {
     padding: 0;
     margin: 0;
+    color: white;
 }
 
 body {
@@ -12,19 +18,20 @@ body {
 }
 
 .container {
-    height: 60vw;
-    width: 60vw;
+    height: min(60vw,508px);
+    width: min(60vw,508px);
     background-color: azure;
     box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 90px 10px;
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap: 2%;
     padding: 2%;
-    border-radius: 20px;
+    border-radius: var(--radius-size);
 }
 
 .option{
     background-color: black;
+    display: flex;
 }
 
 #option1 {
@@ -46,8 +53,52 @@ body {
 .info {
     position: absolute;
     top: 0px;
-    height: 12vw;
-    width: 60vw;
-    border: white 2px solid;
+    height: 12vh;
+    width: min(60vw,508px);
+    border: white 2vw solid;
     border-top: none;
+    border-radius: 0 0 var(--radius-size) var(--radius-size);
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(3,1fr);
 }
+
+h2 {
+    text-wrap: nowrap;
+}
+
+.info h2:nth-of-type(1) {
+    grid-area: 1/2;
+    margin-top: 8px;
+}
+
+.info h2:nth-of-type(2) {
+    grid-area: 3/2;
+    margin-bottom: 12px;
+}
+
+button {
+    background-color: #2ea44f;
+    color: #fff;
+    border: 1px solid #22863a;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 0 rgba(27,31,35,0.04);
+
+    grid-area: -3/-5/-3/span 3;
+}
+
+button:hover {
+    background-color: #2c974b;
+    border-color: #1b6e31;
+}
+
+img {
+    
+}
+
+
